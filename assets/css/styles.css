@@ -1,0 +1,45 @@
+.woocommerce-PIX-INTEGRA_gateway_icon img {
+     max-width: 100px!important;
+     height: auto!important;
+}
+ .nav-tab-wrapper {
+     margin-bottom: 20px;
+}
+ .metabox-holder {
+     background: #fff;
+     padding: 20px;
+     border: 1px solid #ddd;
+     border-radius: 3px;
+}
+ .notice {
+     margin-top: 20px;
+}
+ .postbox {
+     background: #fff;
+     border: 1px solid #ddd;
+     border-radius: 5px;
+     margin-bottom: 20px;
+}
+ .postbox h2.hndle {
+     background: #f1f1f1;
+     border-bottom: 1px solid #ddd;
+     padding: 10px;
+     font-size: 16px;
+     font-weight: bold;
+     margin: 0;
+     cursor: pointer;
+}
+ .postbox .inside {
+     padding: 20px;
+}
+ .postbox ul {
+     list-style: none;
+     padding: 0;
+}
+ .postbox ul li {
+     margin-bottom: 10px;
+}
+ .postbox ul li strong {
+     display: inline-block;
+     width: 150px;
+}
