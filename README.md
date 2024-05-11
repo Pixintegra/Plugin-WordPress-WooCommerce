@@ -27,7 +27,7 @@ Plugin de pagamento para WooCommerce que permite a integração fácil e segura 
    - Será solicitado o **API TOKEN** e **API KEY**.
    - Acesse sua conta Pix Integra, vá para **Dados da conta** e depois **API**.
    - Copie os dados fornecidos e insira no formulário do WooCommerce.
-   - Por padrão, o plugin está configurado para Redirecionamento (Endpoint). No entanto, se você estiver utilizando os plugins Wordfence ou Hide My WP ou regras mais restritas em seu WP, recomenda-se a utilização da opção Arquivo.
+   - Por padrão, o plugin está configurado para Redirecionamento (Endpoint). No entanto, se você estiver utilizando plugins como Wordfence, Hide My WP ou se tiver regras de segurança mais restritivas em seu WordPress, recomenda-se a utilização da opção Arquivo.
    - Clique em **Salvar** e ative o plugin.
 
 Agora você está pronto para começar a receber pagamentos usando a Pix Integra.
