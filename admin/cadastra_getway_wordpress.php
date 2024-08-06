@@ -17,7 +17,6 @@ function add_pixintegra_gateway() {
             $this->id = 'pixintegra';
             $this->icon = plugin_dir_url(__FILE__) . '../assets/img/plogo.ico';
             $this->method_title = 'PIX INTEGRA';
-            $this->method_description = 'Receba com PIX de forma totalmente segura';
             $this->title = 'PIX INTEGRA';
             $this->description = 'Receba com PIX de forma totalmente segura';
             $this->has_fields = true;
@@ -63,21 +62,20 @@ function add_pixintegra_gateway() {
                 'api_token' => [
                     'title' => __('API Token', 'woocommerce'),
                     'type' => 'text',
-                    'description' => __('Insira o API Token disponivel no site pixintega.com.br > dados da conta > API.', 'woocommerce'),
+                    'description' => __('Insira o API Token disponivel no site pixintega.com.br > minha conta > API.', 'woocommerce'),
                     'default' => $api_token ? $api_token : '',
                 ],
                 'api_key' => [
                     'title' => __('API Key', 'woocommerce'),
                     'type' => 'text',
-                    'description' => __('Insira o API Key disponivel no site pixintega.com.br > dados da conta > API.', 'woocommerce'),
+                    'description' => __('Insira o API Key disponivel no site pixintega.com.br > minha conta > API.', 'woocommerce'),
                     'default' => $api_key ? $api_key : '',
                 ],
                 'Rota_do_checkout' => [
-                    'title' => __('Tipo de checkout', 'woocommerce'),
+                    'title' => __('Rota do checkout', 'woocommerce'),
                     'type' => 'select',
-                    'description' => __('Se estiver utilizando os plugins Wordfence ou Hide My WP, utilize a opção Arquivo.', 'woocommerce'),
                     'options' => [
-                        'rota' => 'Redirecionar (Endpoint)',
+                        'rota' => 'Rota',
                         'arquivo' => 'Arquivo',
                     ],
                     'default' => 'rota',

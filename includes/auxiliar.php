@@ -34,6 +34,7 @@ function valida_cpf($cpf) {
         return false;
     }
 
+    // CPF válido
     return true;
 }
 

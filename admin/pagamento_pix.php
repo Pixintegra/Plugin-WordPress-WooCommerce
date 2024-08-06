@@ -18,6 +18,11 @@ $amount = $order->get_total();
 $customer_name = $order->get_billing_first_name() . ' ' . $order->get_billing_last_name();
 $nome_produto = obter_nome_do_produto($order_id);
 $qr_code_url = obter_qrcode_url($order_id);
+
+
+if (!wp_script_is('jquery', 'enqueued')) {
+    wp_enqueue_script('jquery');
+}
 ?>
 <!DOCTYPE html>
 <html lang="pt-br">
@@ -91,7 +96,7 @@ $qr_code_url = obter_qrcode_url($order_id);
                         response.data.redirect_url
                     );
                 } else {
-                    setTimeout(checkPaymentStatus, 5000);
+                    setTimeout(checkPaymentStatus, 2000);
                 }
             },
             error: function() {
@@ -126,7 +131,7 @@ $qr_code_url = obter_qrcode_url($order_id);
                     <span class="text-muted roboto-medium">Processando...</span>
                 </div>
                 <h6 class="text-muted">Escaneie o QR Code para pagar</h6>
-                <img src="<?php echo $qr_code_url; ?>" class="img-fluid" style="max-width:350px; max-height:350px;" alt="QR Code para pagamento via PIX">
+                <img src="<?php echo esc_url($qr_code_url); ?>" class="img-fluid" style="max-width:350px; max-height:350px;" alt="QR Code para pagamento via PIX">
             </div>
         </div>
         <div class="card-footer">

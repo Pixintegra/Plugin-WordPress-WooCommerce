@@ -28,14 +28,14 @@ class PixintegraGateway {
         add_action('admin_init', [$this, 'check_for_updates']);
         $this->includes();
         $this->register_ajax_actions();
-        check_pixintegra_table_checkout();
-        check_pixintegra_table_order();
-        check_pixintegra_table();
     }
 
     public function activate() {
         $this->register_pixintegra_endpoint();
         flush_rewrite_rules();
+        check_pixintegra_table();
+        check_pixintegra_table_order();
+        check_pixintegra_table_checkout();
     }
 
     public function check_woocommerce_active() {
@@ -51,7 +51,7 @@ class PixintegraGateway {
 
     public function pixintegra_endpoint_template_redirect() {
         if (get_query_var('pixintegra-pagamento', false) !== false) {
-            include PIXINTEGRA_PLUGIN_DIR . 'admin/pagamento_pix.php';
+            include home_url('ponte-px.php');
             exit;
         }
     }
@@ -70,7 +70,7 @@ class PixintegraGateway {
     }
 
     public function check_for_updates() {
-        $update_url = 'https://pixintegra.com.br/wp/update.json';
+        $update_url = 'https://pixintegra.com.br/plugin-wordpress/update.json';
         $response = wp_remote_get($update_url);
 
         if (is_wp_error($response)) {
@@ -113,7 +113,7 @@ class PixintegraGateway {
         }
 
         $transaction_id = obter_transacao_id($order_id);
-        $verificar_pagamento = consultar_se_foi_pago(obter_api_token(), obter_api_key(), $transaction_id);
+        $verificar_pagamento = consultar_se_foi_pago(obter_api_key(), obter_api_token(), $transaction_id);
         if($verificar_pagamento == 'concluido')
         {
             $order->update_status('completed');
